@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Track Daily Expenses</title>
+    </head>
+
+    <body>
+        {% if user.is_authenticated %}
+		<h1>Welcome, {{ user.username }}!</h1>
+		{% else %}
+		<h1>Welcome, please login.</h1>
+		{% endif %}
+
+        {% if user.is_authenticated %}
+        <a href="/finances/submit_expense/">Submit Expense</a><br />
+        <a href="/finances/logout/">Logout</a><br />
+        {% else %}
+        <a href="/finances/register/">Register Here</a><br />
+        <a href="/finances/login/">Login</a><br />
+        {% endif %}
+
+    </body>
+</html>

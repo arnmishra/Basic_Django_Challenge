@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Finances</title>
+    </head>
+
+    <body>
+        <h1>Submit Expenses</h1>
+
+        <form id="expense_form" method="post" action="/finances/submit_expense/">
+            {% csrf_token %}
+            Expense: <input type="number" name="quantity" min="1" size="50" />
+            <br />
+
+            <input type="submit" value="submit" />
+        </form>
+        <br/> <a href="/finances/">Home</a>
+    </body>
+</html>

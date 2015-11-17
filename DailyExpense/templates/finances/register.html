@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>finances</title>
+    </head>
+
+    <body>
+        <h1>Registration</h1>
+
+        {% if registered %}
+        finances says: <strong>thank you for registering!</strong>
+        <a href="/finances/">Return to the homepage.</a><br />
+        {% else %}
+
+        <form id="user_form" method="post" action="/finances/register/"
+                enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            {{ user_form.as_p }}
+            {{ profile_form.as_p }}
+
+            <input type="submit" name="submit" value="Register" />
+        </form>
+        {% endif %}
+        <br/> <a href="/finances/">Home</a>
+        <br/> <a href="/finances/login/">Did you mean to login?</a>
+    </body>
+</html>
